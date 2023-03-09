@@ -4,7 +4,7 @@ menu and pictures
 
 This template should help get you started developing with Vue 3 in Vite.
 
-[![Preview](https://github.com/drdah123/portfolio/blob/main/src/assets/img2/Screenshot_20221117_075533.png)](https://lustrous-torrone-884988.netlify.app)
+[![Preview](https://github.com/drdah123/portfolio/blob/main/src/assets/img2/Screenshot_20221117_075533.png)](https://lucid-vue.onrender.com)
 
 ## Recommended IDE Setup
 
