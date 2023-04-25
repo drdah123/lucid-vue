@@ -56,19 +56,20 @@ export default {
 <style scoped>
 .compare-page-container {
   width: 100vw;
-  height: 150vh;
   background-color: black;
   color: aliceblue;
   position: relative;
+  padding: 40px 0;
 }
 .compare-card-container {
-  display: grid;
-  grid-template: 100vh / 33.5% 33.5% 33.5%;
-  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("../assets/assets/Screenshot\ 2022-11-13\ 041856.jpg");
   background-size: cover;
   background-position: 0 88vh;
-  height: 100vh;
+  gap: 10px;
+  padding: 0 40px 0 20px;
 }
 
 .compare-card-header {
@@ -80,5 +81,10 @@ export default {
 
 .select-model {
   margin-left: 6.6%;
+}
+@media (max-width: 480px) {
+  .compare-card-container {
+    flex-direction: column;
+  }
 }
 </style>

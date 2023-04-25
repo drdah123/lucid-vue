@@ -70,8 +70,8 @@ export default {
 <template>
   <div class="car-container-col">
     <div class="car-selector" @click="openMenu()">
-      {{ car?.name }}
-      <div class="car-selector-item">
+      <p>{{ car?.name }}</p>
+      <div class="car-selector-img-container">
         <img :src="carWheel?.image" alt="" />
         <img :src="carColor?.image" alt="" />
         <!-- <IoMdArrowDropdown /> -->
@@ -95,12 +95,11 @@ export default {
     <div>
       <div class="car-color-container">
         <div v-for="(color, i) in carColors" :key="i">
-          <div v-if="color.model === car?.name">
-            <img
-              :src="color.image"
-              @click="chooseDesign(color.name, 'color')"
-            />
-          </div>
+          <img
+            :src="color.image"
+            v-if="color.model === car?.name"
+            @click="chooseDesign(color.name, 'color')"
+          />
         </div>
       </div>
       <div>{{ car?.color }}</div>
@@ -124,44 +123,28 @@ export default {
 </template>
 
 <style scoped>
-.car-container-col {
-  margin: 0 5%;
-}
 .car-selector {
   border: 1px solid #fff;
-  text-align: start;
   padding: 5% 7.5%;
   display: flex;
-  justify-content: flex-start;
   cursor: pointer;
   position: relative;
 }
 .car-selector svg {
-  position: absolute;
-  right: 5%;
   font-size: 1.5rem;
   transition: 0.5s;
-  text-transform: uppercase;
 }
-.car-selector img:nth-child(1) {
-  height: 150%;
-  margin-left: 50%;
+.car-selector .car-selector-img-container {
+  height: 50%;
   position: absolute;
-  right: -13.5vw;
+  display: flex;
+  right: 0;
 }
-.car-selector img:nth-child(2) {
-  height: 150%;
-  margin-left: 50%;
-  position: absolute;
-  right: -9vw;
-}
+
 .active svg {
   rotate: 180deg;
 }
 
-.select-model {
-  margin-left: 6.6%;
-}
 .car-picture-container img {
   width: 97%;
   margin-top: 35%;
@@ -171,17 +154,19 @@ export default {
 }
 .car-color-container {
   margin-top: 10%;
-  display: grid;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
-  grid-template: 45% / 33% 33% 33%;
+}
+.car-color-container div {
+  width: 30%;
 }
 .car-wheel-container {
   display: grid;
   gap: 10px;
   width: 100%;
-  grid-template: 30% / 33% 33% 33%;
   position: relative;
-  top: 50%;
 }
 .car-wheel-container img {
   width: 100%;

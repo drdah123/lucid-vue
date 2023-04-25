@@ -45,13 +45,14 @@ export default {
     </div>
     <Swiper
       :slidesPerView="3"
-      :spaceBetween="100"
+      :spaceBetween="0"
       :loop="true"
       :speed="2000"
       :pagination="{
         type: 'progressbar',
       }"
       :modules="modules"
+      :FreeMode="true"
       class="mySwiper"
     >
       <SwiperSlide>
@@ -109,19 +110,14 @@ export default {
 <style>
 .our-stories {
   width: 100vw;
-  height: 210vh;
+  padding: 5rem 0;
   background-color: rgba(0, 0, 0, 0.9);
   position: relative;
   overflow-x: hidden;
 }
 
 .mySwiper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 1650px;
-  /* margin-top: 40vh; */
+  width: 1400px;
 }
 .mySwiper .card-story p {
   color: #e4dfd4;
@@ -132,8 +128,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 75%;
-  margin: 10vh 0 0 10vh;
+  margin-bottom: 5rem;
+  padding: 0 5rem;
 }
 
 .our-stories-header a {
@@ -142,13 +138,8 @@ export default {
   font-family: GTAmerica, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Roboto, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-weight: 400;
-  width: 10rem;
   text-align: center;
-  right: 15%;
-  top: 7%;
-  padding: 1.3rem 0;
-  position: absolute;
-  cursor: pointer;
+  padding: 1.3rem 3.5rem;
   transition: 1s;
   z-index: 4;
 }
@@ -164,14 +155,10 @@ export default {
   font-weight: 400;
   font-family: SchnyderSDemi, Georgia, Times, Times New Roman, serif,
     Apple Color Emoji, Segoe UI Emoji;
-  position: absolute;
-  top: 5%;
-  left: 6%;
 }
 
 .mySwiper img {
-  height: 344px;
-  width: 490px;
+  width: 100%;
 }
 .mySwiper h4 {
   color: #ededed;
@@ -179,26 +166,19 @@ export default {
   font-family: GTAmerica, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Roboto, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 1.375rem;
-  position: absolute;
 }
 
-.mySwiper p {
-  position: absolute;
-  bottom: -15vh;
-}
 .mySwiper div {
   border-left: 0.1px solid #fff;
-  margin: 100px 5% 0;
-  padding: 0 1px 10% 5%;
+  padding: 0 3% 5%;
   position: relative;
 }
-.mySwiper .swiper-pagination {
-  top: -240px !important;
-  width: 50vw !important;
+.our-stories .mySwiper .swiper-pagination {
+  width: 90vw !important;
   background: rgb(82, 82, 82) !important;
   padding: 0.001px 0 !important;
-  margin-right: 25%;
-  position: relative;
+  bottom: 50px;
+  transform: translateX(-55%);
 }
 .mySwiper .swiper-pagination span {
   background: #fff !important;
@@ -208,60 +188,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 81%;
-  height: 10%;
-  position: absolute;
-  left: 10%;
-  top: 67%;
-}
-@media (max-width: 1020px) {
-  .our-stories .projects {
-    display: grid;
-    height: fit-content;
-    top: 40%;
-    left: 10%;
-  }
-  .our-stories {
-    height: 200vh;
-  }
-  .our-stories-header a {
-    display: none;
-  }
-  .our-stories-header h3 {
-    font-size: 2.125rem;
-  }
-  .mySwiper img {
-    height: 190px;
-    width: 280px;
-  }
-  .our-stories h3 {
-    top: 5vh;
-  }
-  .mySwiper {
-    width: 1020px;
-  }
-}
-@media (max-width: 620px) {
-  .our-stories .projects {
-    display: grid;
-    height: fit-content;
-    top: 90vh;
-  }
-
-  .our-stories {
-    height: 160vh;
-  }
-  .mySwiper .swiper-pagination {
-    margin-right: 70%;
-  }
-  .projects-content p {
-    font-size: 0.5rem !important;
-  }
+  margin: 0 7rem;
 }
 
 .our-stories .projects img {
-  height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 .single-project {
   position: relative;
@@ -275,7 +207,7 @@ export default {
 }
 .our-stories .projects .projects-content {
   position: absolute;
-  top: -10vh;
+  bottom: 10px;
   color: #fff;
   left: 8%;
   font-family: GTAmerica, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -284,5 +216,23 @@ export default {
 
 .our-stories .projects .projects-content p:nth-child(2) {
   font-size: 1.375rem;
+}
+@media (max-width: 1020px) {
+  .our-stories .projects {
+    flex-direction: column;
+  }
+  .our-stories-header a {
+    display: none;
+  }
+  .our-stories-header h3 {
+    font-size: 2.125rem;
+  }
+  .our-stories .projects img {
+    max-height: 400px;
+    height: 90vw;
+  }
+  .mySwiper {
+    width: 1020px;
+  }
 }
 </style>

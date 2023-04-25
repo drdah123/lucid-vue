@@ -34,10 +34,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  width: 100%;
-  margin-left: -9vw;
-  position: relative;
-  height: 100%;
 }
 html {
   scroll-behavior: smooth;
